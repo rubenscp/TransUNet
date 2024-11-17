@@ -1,0 +1,18 @@
+#PBS -N transunet_test
+#PBS -q testegpu
+#PBS -m abe
+#PBS -e transunet_test_wm_errors 
+#PBS -o transunet_test_wm_output
+
+export TRANSFORMERS_OFFLINE=1
+
+module load cuda/12.0.0
+source /home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3.sh
+unset CUDA_VISIBLE_DEVICES
+
+python ~/research/white-mold-applications/TransUNet/test.py \
+       --dataset WhiteMold --vit_name R50-ViT-B_16 --max_epochs 150 \
+       --volume_path research/white-mold-applications/project_TransUNet/data/Synapse/test_vol_h5 \
+       --list_dir research/white-mold-applications/TransUNet/lists/lists_Synapse \
+       --is_savenii \
+       --test_save_dir research/white-mold-applications/model/predictions

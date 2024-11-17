@@ -1,0 +1,23 @@
+  0%|                                           | 0/5 [00:00<?, ?it/s] 20%|███████                            | 1/5 [01:02<04:08, 62.02s/it] 40%|██████████████                     | 2/5 [01:51<02:43, 54.55s/it] 60%|█████████████████████              | 3/5 [02:41<01:45, 52.68s/it] 80%|████████████████████████████       | 4/5 [03:32<00:51, 51.99s/it] 80%|████████████████████████████       | 4/5 [04:23<01:05, 65.76s/it]
+Traceback (most recent call last):
+  File "/home/lovelace/proj/proj939/rubenscp/research/white-mold-applications/TransUNet/train.py", line 138, in <module>
+    trainer[dataset_name](args, net, snapshot_path)
+  File "/home/lovelace/proj/proj939/rubenscp/research/white-mold-applications/TransUNet/trainer.py", line 279, in trainer_white_mold
+    WM_Utils.save_losses(losses, path_and_filename_losses)
+  File "/home/lovelace/proj/proj939/rubenscp/research/white-mold-applications/TransUNet/wm_utils.py", line 86, in save_losses
+    df.to_excel(path_and_filename, sheet_name='losses', index=False)
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/pandas/core/generic.py", line 2345, in to_excel
+    formatter.write(
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/pandas/io/formats/excel.py", line 946, in write
+    writer = ExcelWriter(  # type: ignore[abstract]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/pandas/io/excel/_openpyxl.py", line 61, in __init__
+    super().__init__(
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1263, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/pandas/io/common.py", line 739, in get_handle
+    check_parent_directory(str(handle))
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/pandas/io/common.py", line 604, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'research/white-mold-applications/model/TU_WhiteMold224/TU_pretrain_R50-ViT-B_16_skip3_epo5_bs24_224'

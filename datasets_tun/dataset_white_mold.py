@@ -212,7 +212,9 @@ class WhiteMold_dataset(Dataset):
             # print(f'class WhiteMold_dataset, __getitem__, train, normalized_image.shape: {normalized_image.shape}')
             # print(f'class WhiteMold_dataset, __getitem__, train, label.shape: {label.shape}')
             
-        elif self.split == "test":
+        # Rubens - 11/05/2025
+        # elif self.split == "test":
+        elif self.split == "test" or self.split == "valid":
 
             # print(f'class WhiteMold_dataset, __getitem__, split=test 01')
 

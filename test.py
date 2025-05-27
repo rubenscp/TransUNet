@@ -96,17 +96,21 @@ def inference(args, model, test_save_path=None):
 
 #     return final_prediction
 
-
 def inference_white_mold(args, model, test_save_path=None):
     # print(f'inferecen_white_mold 1 - args: {args}')    
     # print(f'inferecen_white_mold 2 - test_save_path: {test_save_path}')
 
     # setting tes image folder 
-    test_image_folder = os.path.join(args.volume_path, "test")
+    # Rubens - 11/05/2025
+    # ATTENTION: change following for test or valid input dataset 
+    # test_image_folder = os.path.join(args.volume_path, "test")
+    test_image_folder = os.path.join(args.volume_path, "valid")
     print(f'test_image_folder: {test_image_folder}')
 
     # loading test image dataset 
-    db_test = args.Dataset(base_dir=args.volume_path, split="test", list_dir=args.list_dir)
+    # Rubens - 11/05/2025
+    # db_test = args.Dataset(base_dir=args.volume_path, split="test", list_dir=args.list_dir)
+    db_test = args.Dataset(base_dir=args.volume_path, split="valid", list_dir=args.list_dir)
 
     # loading test image loader 
     testloader = DataLoader(db_test, batch_size=1, shuffle=False, num_workers=1)
@@ -187,7 +191,7 @@ def inference_white_mold(args, model, test_save_path=None):
     model_name = 'TransUNet'
     num_classes = 6
     threshold = 0 # 0.4
-    iou_threshold = 0.5 # 0.3
+    iou_threshold = 0.3 # 0.3
     non_maximum_suppression = 0 # 0.7 
     metrics_folder = os.path.join('/home/lovelace/proj/proj939/rubenscp/', test_save_path, 'metrics')
     print(f'metrics_folder: {metrics_folder}')

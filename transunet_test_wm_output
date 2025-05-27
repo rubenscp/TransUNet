@@ -1,0 +1,319 @@
+Model loaded from research/white-mold-applications/model/TU_WhiteMold224/TU_pretrain_R50-ViT-B_16_skip3_epo150_bs24_224/epoch_149.pth
+Namespace(volume_path='/home/lovelace/proj/proj939/rubenscp/research/white-mold-dataset/results-pre-processed-images/running-0021-15ds-300x300-merged-classes/splitting_by_images/4-balanced-output-dataset/mask-image', dataset='WhiteMold', num_classes=8, list_dir='', max_iterations=20000, max_epochs=150, batch_size=24, img_size=224, is_savenii=True, n_skip=3, vit_name='R50-ViT-B_16', test_save_dir='research/white-mold-applications/model/predictions', deterministic=1, base_lr=0.01, seed=1234, vit_patches_size=16, Dataset=<class 'datasets_tun.dataset_white_mold.WhiteMold_dataset'>, z_spacing=1, is_pretrain=True, exp='TU_WhiteMold224')
+TU_pretrain_R50-ViT-B_16_skip3_epo150_bs24_224
+arg.is_savenii: True - before inference
+arg.is_savenii: True - if true
+model: VisionTransformer(
+  (transformer): Transformer(
+    (embeddings): Embeddings(
+      (hybrid_model): ResNetV2(
+        (root): Sequential(
+          (conv): StdConv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+          (gn): GroupNorm(32, 64, eps=1e-06, affine=True)
+          (relu): ReLU(inplace=True)
+        )
+        (body): Sequential(
+          (block1): Sequential(
+            (unit1): PreActBottleneck(
+              (gn1): GroupNorm(32, 64, eps=1e-06, affine=True)
+              (conv1): StdConv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 64, eps=1e-06, affine=True)
+              (conv2): StdConv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv3): StdConv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+              (downsample): StdConv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn_proj): GroupNorm(256, 256, eps=1e-05, affine=True)
+            )
+            (unit2): PreActBottleneck(
+              (gn1): GroupNorm(32, 64, eps=1e-06, affine=True)
+              (conv1): StdConv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 64, eps=1e-06, affine=True)
+              (conv2): StdConv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv3): StdConv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit3): PreActBottleneck(
+              (gn1): GroupNorm(32, 64, eps=1e-06, affine=True)
+              (conv1): StdConv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 64, eps=1e-06, affine=True)
+              (conv2): StdConv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv3): StdConv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+          )
+          (block2): Sequential(
+            (unit1): PreActBottleneck(
+              (gn1): GroupNorm(32, 128, eps=1e-06, affine=True)
+              (conv1): StdConv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 128, eps=1e-06, affine=True)
+              (conv2): StdConv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 512, eps=1e-06, affine=True)
+              (conv3): StdConv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+              (downsample): StdConv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+              (gn_proj): GroupNorm(512, 512, eps=1e-05, affine=True)
+            )
+            (unit2): PreActBottleneck(
+              (gn1): GroupNorm(32, 128, eps=1e-06, affine=True)
+              (conv1): StdConv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 128, eps=1e-06, affine=True)
+              (conv2): StdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 512, eps=1e-06, affine=True)
+              (conv3): StdConv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit3): PreActBottleneck(
+              (gn1): GroupNorm(32, 128, eps=1e-06, affine=True)
+              (conv1): StdConv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 128, eps=1e-06, affine=True)
+              (conv2): StdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 512, eps=1e-06, affine=True)
+              (conv3): StdConv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit4): PreActBottleneck(
+              (gn1): GroupNorm(32, 128, eps=1e-06, affine=True)
+              (conv1): StdConv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 128, eps=1e-06, affine=True)
+              (conv2): StdConv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 512, eps=1e-06, affine=True)
+              (conv3): StdConv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+          )
+          (block3): Sequential(
+            (unit1): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+              (downsample): StdConv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+              (gn_proj): GroupNorm(1024, 1024, eps=1e-05, affine=True)
+            )
+            (unit2): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit3): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit4): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit5): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit6): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit7): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit8): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+            (unit9): PreActBottleneck(
+              (gn1): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv1): StdConv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (gn2): GroupNorm(32, 256, eps=1e-06, affine=True)
+              (conv2): StdConv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (gn3): GroupNorm(32, 1024, eps=1e-06, affine=True)
+              (conv3): StdConv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (relu): ReLU(inplace=True)
+            )
+          )
+        )
+      )
+      (patch_embeddings): Conv2d(1024, 768, kernel_size=(1, 1), stride=(1, 1))
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): Encoder(
+      (layer): ModuleList(
+        (0-11): 12 x Block(
+          (attention_norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+          (ffn_norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+          (ffn): Mlp(
+            (fc1): Linear(in_features=768, out_features=3072, bias=True)
+            (fc2): Linear(in_features=3072, out_features=768, bias=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+          (attn): Attention(
+            (query): Linear(in_features=768, out_features=768, bias=True)
+            (key): Linear(in_features=768, out_features=768, bias=True)
+            (value): Linear(in_features=768, out_features=768, bias=True)
+            (out): Linear(in_features=768, out_features=768, bias=True)
+            (attn_dropout): Dropout(p=0.0, inplace=False)
+            (proj_dropout): Dropout(p=0.0, inplace=False)
+            (softmax): Softmax(dim=-1)
+          )
+        )
+      )
+      (encoder_norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+    )
+  )
+  (decoder): DecoderCup(
+    (conv_more): Conv2dReLU(
+      (0): Conv2d(768, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+    )
+    (blocks): ModuleList(
+      (0): DecoderBlock(
+        (conv1): Conv2dReLU(
+          (0): Conv2d(1024, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (conv2): Conv2dReLU(
+          (0): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (up): UpsamplingBilinear2d(scale_factor=2.0, mode='bilinear')
+      )
+      (1): DecoderBlock(
+        (conv1): Conv2dReLU(
+          (0): Conv2d(512, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (conv2): Conv2dReLU(
+          (0): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (up): UpsamplingBilinear2d(scale_factor=2.0, mode='bilinear')
+      )
+      (2): DecoderBlock(
+        (conv1): Conv2dReLU(
+          (0): Conv2d(192, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (conv2): Conv2dReLU(
+          (0): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (up): UpsamplingBilinear2d(scale_factor=2.0, mode='bilinear')
+      )
+      (3): DecoderBlock(
+        (conv1): Conv2dReLU(
+          (0): Conv2d(64, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (conv2): Conv2dReLU(
+          (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (up): UpsamplingBilinear2d(scale_factor=2.0, mode='bilinear')
+      )
+    )
+  )
+  (segmentation_head): SegmentationHead(
+    (0): Conv2d(16, 8, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): Identity()
+  )
+)
+test_save_path: research/white-mold-applications/model/predictions/TU_WhiteMold224/TU_pretrain_R50-ViT-B_16_skip3_epo150_bs24_224
+
+Showing Model size
+
+=========================================================================================================
+Layer (type:depth-idx)                                  Output Shape              Param #
+=========================================================================================================
+VisionTransformer                                       [1, 8, 224, 224]          --
+├─Transformer: 1-1                                      [1, 196, 768]             --
+│    └─Embeddings: 2-1                                  [1, 196, 768]             150,528
+│    │    └─ResNetV2: 3-1                               [1, 1024, 14, 14]         11,894,848
+│    │    └─Conv2d: 3-2                                 [1, 768, 14, 14]          787,200
+│    │    └─Dropout: 3-3                                [1, 196, 768]             --
+│    └─Encoder: 2-2                                     [1, 196, 768]             --
+│    │    └─ModuleList: 3-4                             --                        85,054,464
+│    │    └─LayerNorm: 3-5                              [1, 196, 768]             1,536
+├─DecoderCup: 1-2                                       [1, 16, 224, 224]         --
+│    └─Conv2dReLU: 2-3                                  [1, 512, 14, 14]          --
+│    │    └─Conv2d: 3-6                                 [1, 512, 14, 14]          3,538,944
+│    │    └─BatchNorm2d: 3-7                            [1, 512, 14, 14]          1,024
+│    │    └─ReLU: 3-8                                   [1, 512, 14, 14]          --
+│    └─ModuleList: 2-4                                  --                        --
+│    │    └─DecoderBlock: 3-9                           [1, 256, 28, 28]          2,950,144
+│    │    └─DecoderBlock: 3-10                          [1, 128, 56, 56]          737,792
+│    │    └─DecoderBlock: 3-11                          [1, 64, 112, 112]         147,712
+│    │    └─DecoderBlock: 3-12                          [1, 16, 224, 224]         11,584
+├─SegmentationHead: 1-3                                 [1, 8, 224, 224]          --
+│    └─Conv2d: 2-5                                      [1, 8, 224, 224]          1,160
+│    └─Identity: 2-6                                    [1, 8, 224, 224]          --
+=========================================================================================================
+Total params: 105,276,936
+Trainable params: 105,276,936
+Non-trainable params: 0
+Total mult-adds (Units.GIGABYTES): 11.95
+=========================================================================================================
+Input size (MB): 0.60
+Forward/backward pass size (MB): 416.34
+Params size (MB): 420.51
+Estimated Total Size (MB): 837.45
+=========================================================================================================
+
+GFLOPS: 25.41 GMac, Parameters: 105.28 M
+
+test_image_folder: /home/lovelace/proj/proj939/rubenscp/research/white-mold-dataset/results-pre-processed-images/running-0021-15ds-300x300-merged-classes/splitting_by_images/4-balanced-output-dataset/mask-image/valid
+
+class WhiteMold_dataset, constructor called
+class WhiteMold_dataset, base_dir: /home/lovelace/proj/proj939/rubenscp/research/white-mold-dataset/results-pre-processed-images/running-0021-15ds-300x300-merged-classes/splitting_by_images/4-balanced-output-dataset/mask-image
+class WhiteMold_dataset, list_dir: 
+class WhiteMold_dataset, split: valid
+class WhiteMold_dataset, transform: None
+545 test iterations per epoch
+545 test iterations per epoch
+tested_folder: /home/lovelace/proj/proj939/rubenscp/research/white-mold-applications/model/predictions/TU_WhiteMold224/TU_pretrain_R50-ViT-B_16_skip3_epo150_bs24_224/tested-image

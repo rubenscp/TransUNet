@@ -1,0 +1,40 @@
+0it [00:00, ?it/s]0it [00:01, ?it/s]
+Traceback (most recent call last):
+  File "/home/lovelace/proj/proj939/rubenscp/research/white-mold-applications/TransUNet/test.py", line 464, in <module>
+    inference_white_mold(args, net, test_save_path)
+  File "/home/lovelace/proj/proj939/rubenscp/research/white-mold-applications/TransUNet/test.py", line 136, in inference_white_mold
+    for i_batch, sampled_batch in tqdm(enumerate(testloader)):  
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/tqdm/std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1346, in _next_data
+    return self._process_data(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1372, in _process_data
+    data.reraise()
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/torch/_utils.py", line 705, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/research/white-mold-applications/TransUNet/datasets_tun/dataset_white_mold.py", line 253, in __getitem__
+    bounding_boxes = get_annotation_from_xml_file(path_and_annotation_filename)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/research/white-mold-applications/TransUNet/datasets_tun/dataset_white_mold.py", line 298, in get_annotation_from_xml_file
+    ann_tree = ET.parse(xml_filename)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/xml/etree/ElementTree.py", line 1204, in parse
+    tree.parse(source, parser)
+  File "/home/lovelace/proj/proj939/rubenscp/CENAPAD/miniconda3/lib/python3.12/xml/etree/ElementTree.py", line 558, in parse
+    source = open(source, "rb")
+             ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lovelace/proj/proj939/rubenscp/research/white-mold-dataset/results-pre-processed-images/running-0021-15ds-300x300-merged-classes/splitting_by_images/4-balanced-output-dataset/mask-image/valid/xml/ds-2023-09-07-santa-helena-de-goias-go-fazenda-sete-ilhas-pivo-04-IMG_3887-bbox-1528213890.xml'
+
